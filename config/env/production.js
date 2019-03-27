@@ -272,7 +272,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
      adapter: '@sailshq/socket.io-redis',
-    // url: 'redis://user:password@bigsquid.redistogo.com:9562/databasenumber',
+     url: 'redis://redistogo:6b1dd3ab8649ac86b621fd8d3318e781@porgy.redistogo.com:11142',
     //--------------------------------------------------------------------------
     // /\   OR, to avoid checking it in to version control, you might opt to
     // ||   set sensitive credentials like this using an environment variable.
