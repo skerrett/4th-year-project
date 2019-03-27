@@ -1,4 +1,5 @@
 var sails_datastores__default__url = 'mysql://newuser:seren@localhost:3306/easy';
+var postgres = 'postgres://upmlzoptarypap:4592ad421d42ad919f6edd114cd8f00a6af873f7957b93841a446e5026615693@ec2-46-137-113-157.eu-west-1.compute.amazonaws.com:5432/d4v4p45ttcdtb7'
 /**
  * Production environment settings
  * (sails.config.*)
@@ -48,8 +49,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     default: {
-      adapter: require('sails-mysql'),
-      url: sails_datastores__default__url ,
+
+      adapter: require('sails-postgresql'),
+      url: postgres ,
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.
@@ -71,7 +73,7 @@ module.exports = {
       * https://sailsjs.com/config/datastores                                     *
       *                                                                           *
       ****************************************************************************/
-      // ssl: true,
+      ssl: true,
 
     },
 
@@ -186,7 +188,7 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     adapter: '@sailshq/connect-redis',
-    url: 'redis://localhost:6379',
+    url: 'redis://redistogo:6b1dd3ab8649ac86b621fd8d3318e781@porgy.redistogo.com:11142',
     //--------------------------------------------------------------------------
     // /\   OR, to avoid checking it in to version control, you might opt to
     // ||   set sensitive credentials like this using an environment variable.
