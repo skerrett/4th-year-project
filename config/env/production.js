@@ -151,9 +151,9 @@ module.exports = {
     *                                                                          *
     ***************************************************************************/
     cors: {
-      // allowOrigins: [
-      //   'https://example.com',
-      // ]
+       allowOrigins: [
+        'https://my-attendance-app-staging.herokuapp.com',
+       ]
     },
 
   },
@@ -253,10 +253,10 @@ module.exports = {
     * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
     *                                                                          *
     ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
+    onlyAllowOrigins: [
+       'https://my-attendance-app-staging.herokuapp.com',
     //   'https://staging.example.com',
-    // ],
+    ],
 
 
     /***************************************************************************
@@ -374,8 +374,8 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://example.com',
-    internalEmailAddress: 'support@example.com',
+    baseUrl: 'https://my-attendance-app-staging.herokuapp.com',
+    internalEmailAddress: 'darrenskerrett96@gmail.com',
 
     // mailgunDomain: 'mg.example.com',
     // mailgunSecret: 'key-prod_fake_bd32301385130a0bafe030c',
