@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th><th>Date</th><th>subject</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% for (var i = 0; i < lesson.length; i++) { %>
+    <tr>
+
+        <td><%= lesson[i].id %></td>
+        <td><%= lesson[i].date %></td>
+        <td><%= lesson[i].subject %></td>
+      <td><button type="button" class="btn btn-primary" onclick="location.href='/attendance?id=<%= lesson[i].id %>'">View</button></td>
+
+    </tr>
+  <% } %>
+  </tbody>
+</table>
+
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

@@ -1,0 +1,101 @@
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th><th>Name</th><th>surname</th><th>status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% for (var i = 0; i < attendance.length; i++) { %>
+    <tr>
+      <td><%= attendance[i].id %></td>
+      <td><%= attendance[i].students.Fname %></td>
+      <td><%= attendance[i].students.Lname %></td>
+      <td><%= attendance[i].isPresent%>
+        <%if(attendance[i].isPresent == true) {%>
+        <td>
+          <button type="button" class="btn btn-danger" onclick="update1(this)">Mark Absent</button>
+      </td>
+<% } else {%>
+        <td>
+          <button type="button" class="btn btn-success" onclick="update2(this)">Mark Present</button>
+        </td>
+  <% } %>
+      <% } %>
+    </tr>
+  </tbody>
+</table>
+
+<%- exposeLocalsToBrowser() %>
+<script type="text/javascript">
+
+
+
+
+
+  function update1(x) {
+    var td = x.parentNode;
+    var interpret = td.previousSibling;
+    var interpret_value = interpret.innerHTML;
+    var meth = interpret.previousSibling.previousSibling
+    var hey = meth.previousSibling.previousSibling
+    var id = hey.previousSibling.previousSibling
+    var id_value = id.innerHTML;
+    var csrf = window.SAILS_LOCALS._csrf;
+
+    $.ajax({
+      url: '/attendance/'+id_value, //Your api url
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      type: 'PATCH',   //type is any HTTP method
+      data: {
+        "isPresent": "false"
+      },
+      _csrf: csrf,
+      //Data as js object
+      success: function () {
+        window.location.reload(true);
+      },
+      error: function () {
+        console.log(window.SAILS_LOCALS._csrf);
+
+      }
+    })
+    ;
+
+  }
+  function update2(x) {
+    var td = x.parentNode;
+    var interpret = td.previousSibling;
+    var interpret_value = interpret.innerHTML;
+    var meth = interpret.previousSibling.previousSibling
+    var hey = meth.previousSibling.previousSibling
+    var id = hey.previousSibling.previousSibling;
+    var id_value = id.innerHTML;
+    var csrf = window.SAILS_LOCALS._csrf;
+
+    $.ajax({
+      url: '/attendance/'+id_value,
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },//Your api url
+      type: 'PATCH', //type is any HTTP method
+      data: {
+        "isPresent": "true",
+      },
+      _csrf: csrf,
+      //Data as js object
+      success: function () {
+        window.location.reload(true);
+      },
+      error: function () {
+        console.log(window.SAILS_LOCALS._csrf);
+        console.log("fail");
+      }
+    })
+    ;
+
+  }
+
+</script>
