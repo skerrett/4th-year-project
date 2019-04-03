@@ -42,6 +42,10 @@ module.exports.routes = {
   //"GET /csrfToken": { action: "security/grant-csrf-token" },
 
   'GET /admin/subject':            { action:   'admin/view-admin-subjects' },
+  'GET /admin/subject/create':      { action:    'admin/view-admin-subjects-create'},
+  'GET /admin/lesson':            { action:   'admin/view-lesson-create' },
+  'POST /admin/create-subject':      {action: 'admin/subjects-create'},
+  'POST /admin/create-lesson':      {action: 'admin/lessons-create'},
 
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
@@ -56,6 +60,7 @@ module.exports.routes = {
   'PUT   /api/v1/entrance/login':                        { action: 'entrance/login' },
 
   'PATCH /studentupdate':                             {action: 'dashboard/student-update'},
+
 
   'POST  /api/v1/entrance/signup':                       { action: 'entrance/signup' },
   'POST  /api/v1/entrance/send-password-recovery-email': { action: 'entrance/send-password-recovery-email' },

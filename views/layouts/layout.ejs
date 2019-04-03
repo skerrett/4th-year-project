@@ -29,7 +29,8 @@
         <a class="navbar-brand mr-0" href="/">Easy Attendance</a>
         <div class="navbar-nav flex-row">
           <!-- LOGGED-IN NAVIGATION -->
-          <% if(me) { %>
+          <% var me;
+          if(me) { %>
           <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Help</a>
           <!-- Only in desktop nav -->
           <div class="nav-item dropdown d-none d-sm-block">

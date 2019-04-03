@@ -1,12 +1,8 @@
 module.exports = async function attendance (req, res) {
 
-  var lessonId = req.param('id');
+  let lessonId = req.param('id');
 
-  var attendance = await Attendance.find({lessons: lessonId}).populate('students');
-
-
-
-
+  const attendance = await Attendance.find({lessons: lessonId}).populate('students');
 
 
   if (!lessonId) {

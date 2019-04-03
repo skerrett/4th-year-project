@@ -1,0 +1,58 @@
+<div>
+  <form method="POST" action="controllers/admin/lesson-create.js" id="form">
+    <div class="form-group row">
+      <label for="datetime" class="col-2 col-form-label">Date and time</label>
+      <div class="col-6">
+        <input class="form-control" type="datetime-local" value="2019-08-19T13:45:00" id="datetime">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject" class="col-2 col-form-label">subject ID</label>
+      <div class="col-6">
+      <input class="form-control" type="text" name="subject" id ="subject" value=<%= subject[0].id%>>
+    </div>
+    </div>
+    <fieldset class="form-group">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          This class occurs every week this semester
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+          This class doesn't occur every week
+        </label>
+      </div>
+    </fieldset>
+    <input type="button" value="Submit" id="submit" onclick="SendAjax();">
+  </form>
+</div>
+<%- exposeLocalsToBrowser() %>
+<script>
+  // When click on button store values from form fields into variables
+  function SendAjax() {
+    let subject = $("#subject").val();
+    let datetime = $("#datetime").val();
+    var button = $(".form-check-input:checked").val();
+    const csrf = window.SAILS_LOCALS._csrf;
+    // Check if fields are empty
+
+    // AJAX code to submit form
+    $.ajax ({
+      type: "POST",
+      url: "/admin/create-lesson",
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      data: { "subject": subject, "date": datetime, "option": button},
+      success: function() {
+        alert("This lesson has been added");
+      },
+      error: function(){
+        //alert("this entry already exists");
+      }
+    })
+  }
+</script>
