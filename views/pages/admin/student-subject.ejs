@@ -1,0 +1,83 @@
+<div>
+  <form method="POST" action="controllers/admin/student-subjects.js" id="form">
+    <div class="form-group row">
+      <label for="studentID" class="col-2 col-form-label">Student ID</label>
+      <div class="col-6">
+        <input class="form-control" type="text" value=<%=student[0].id%> id="studentID">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject1" class="col-2 col-form-label">Subject 1</label>
+      <div class="col-6">
+        <input class="form-control" type="text" name="subject1" id ="subject1">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject2" class="col-2 col-form-label">Subject 2</label>
+      <div class="col-6">
+        <input class="form-control" type="text" name="subject2" id ="subject2">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject3" class="col-2 col-form-label">Subject 3</label>
+      <div class="col-6">
+        <input class="form-control" type="text" name="subject3" id ="subject3">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject4" class="col-2 col-form-label">Subject 4</label>
+      <div class="col-6">
+        <input class="form-control" type="text" name="subject4" id ="subject4">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject5" class="col-2 col-form-label">Subject 5</label>
+      <div class="col-6">
+        <input class="form-control" type="text" name="subject5" id ="subject5">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="subject6" class="col-2 col-form-label">Subject 6</label>
+      <div class="col-6">
+        <input class="form-control" type="text" name="subject6" id ="subject6">
+      </div>
+    </div>
+    <input type="button" value="Submit" id="submit" onclick="SendAjax();">
+  </form>
+</div>
+<%- exposeLocalsToBrowser() %>
+<script>
+  // When click on button store values from form fields into variables
+  function SendAjax() {
+    let student = $("#studentID").val();
+    let subject1 = $("#subject1").val();
+    let subject2 = $("#subject2").val();
+    let subject3 = $("#subject3").val();
+    let subject4 = $("#subject4").val();
+    let subject5 = $("#subject5").val();
+    let subject6 = $("#subject6").val();
+    var subjects = [subject1, subject2, subject3, subject4, subject5, subject6];
+    const csrf = window.SAILS_LOCALS._csrf;
+    console.log(subjects);
+    const subject = subjects.filter(function (e) {
+      return e
+    });
+    // Check if fields are empty
+
+    // AJAX code to submit form
+    $.ajax ({
+      type: "POST",
+      url: "/admin/student-subject",
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      data: { "subjects": subject, "student": student,},
+      success: function() {
+        alert("This subjects have been added and this student is enrolled in these classes");
+      },
+      error: function(){
+        //alert("this entry already exists");
+      }
+    })
+  }
+</script>

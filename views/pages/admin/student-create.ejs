@@ -1,0 +1,50 @@
+<div>
+  <form method="POST" action="controllers/admin/student-create.js" id="form">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="fName">First Name</label>
+          <input type="text" class="form-control" id="fName" placeholder="Darren">
+        </div>
+      </div>
+        <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="Surname">Surname</label>
+          <input type="text" class="form-control" id="Surname" placeholder="Skerrett">
+        </div>
+        </div>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="StudentCode">Student Code</label>
+        <input type="text" class="form-control" id="StudentCode" placeholder="23453212467894">
+      </div>
+    </div>
+    <input type="button" value="Submit" id="submit" onclick="SendAjax();">
+  </form>
+</div>
+<%- exposeLocalsToBrowser() %>
+<script>
+  // When click on button store values from form fields into variables
+  function SendAjax() {
+    let fName = $("#fName").val();
+    let surname = $("#Surname").val();
+    let studentCode = $("#StudentCode").val();
+    const csrf = window.SAILS_LOCALS._csrf;
+    // Check if fields are empty
+
+    // AJAX code to submit form
+    $.ajax ({
+      type: "POST",
+      url: "/admin/create-student",
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      data: { "fName": fName, "surname": surname, "studentCode": studentCode},
+      success: function(data) {
+        console.log(data.id);
+       window.location=('/admin/studentSubject?id='+data.id);
+      },
+      error: function(){
+        alert("this entry already exists");
+      }
+    });}
+</script>

@@ -39,13 +39,19 @@ module.exports.routes = {
   'GET /account':            { action: 'account/view-account-overview' },
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
+
   //"GET /csrfToken": { action: "security/grant-csrf-token" },
 
-  'GET /admin/subject':            { action:   'admin/view-admin-subjects' },
+  'GET /admin/subject':             { action:   'admin/view-admin-subjects' },
   'GET /admin/subject/create':      { action:    'admin/view-admin-subjects-create'},
-  'GET /admin/lesson':            { action:   'admin/view-lesson-create' },
-  'POST /admin/create-subject':      {action: 'admin/subjects-create'},
+  'GET /admin/student/create':      { action:    'admin/view-student-create'},
+  'GET /admin/lesson':              { action:   'admin/view-lesson-create' },
+  'GET /admin/studentSubject':      { action:   'admin/view-student-subjects' },
+  'POST /admin/create-subject':     {action: 'admin/subjects-create'},
   'POST /admin/create-lesson':      {action: 'admin/lessons-create'},
+  'POST /admin/create-student':     {action: 'admin/student-create'},
+  'POST /admin/student-subject':    {action: 'admin/student-subjects'},
+
 
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
