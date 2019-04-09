@@ -52,7 +52,8 @@ module.exports.routes = {
   'POST /admin/create-student':     {action: 'admin/student-create'},
   'POST /admin/student-subject':    {action: 'admin/student-subjects'},
 
-
+//mobile api
+  'PATCH /mobile/present':    {action: 'mobile/student-present',csrf: false},
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
@@ -66,6 +67,8 @@ module.exports.routes = {
   'PUT   /api/v1/entrance/login':                        { action: 'entrance/login' },
 
   'PATCH /studentupdate':                             {action: 'dashboard/student-update'},
+
+  'GET /csrfToken': { action: 'security/grant-csrf-token'},
 
 
   'POST  /api/v1/entrance/signup':                       { action: 'entrance/signup' },

@@ -11,6 +11,7 @@
     "@sailshq/upgrade": "^1.0.9",
     "async": "2.0.1",
     "connect-redis": "^3.4.1",
+    "express-jwt": "^5.3.1",
     "express-session": "^1.15.6",
     "sails": "^1.1.0",
     "sails-hook-apianalytics": "^2.0.0",

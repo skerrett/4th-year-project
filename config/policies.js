@@ -12,7 +12,7 @@ module.exports.policies = {
 
   '*': 'is-logged-in',
   'admin/*': 'is-super-admin',
-
+  'mobile/*': true,
   // Bypass the `is-logged-in` policy for:
   'entrance/*': true,
   'account/logout': true,
