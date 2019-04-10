@@ -5,10 +5,5 @@ module.exports = async function getQuote(req, res) {
    var text = req.param('input');
    var data = {Fname: "Darren",Lname: "Skerrett", nfcCode: "2345682739"};
 
-   return res.json(200,{ Student: {
-         "Fname": "Darren",
-         "Lname": "Skerrett",
-         "nfcCode": "2334545678",
-       }});
-
+   return res.json(200,{ Student: data });
 };
