@@ -80,7 +80,8 @@ password attempt.`,
     // this to work.)
 
     // Send success response (this is where the session actually gets persisted)
-    return exits.success(userRecord.id);
+    var response = JSON.stringify({user:  userRecord.id});
+    return exits.success(response);
 
   }
 
