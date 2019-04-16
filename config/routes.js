@@ -54,6 +54,8 @@ module.exports.routes = {
 
 //mobile api
   'PATCH /mobile/present':    {action: 'mobile/student-present',csrf: false},
+  'PUT /mobile/login':    {action: 'mobile/user-login',csrf: false},
+  'GET /mobile/lesson':    {action: 'mobile/user-lessons'},
 
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
