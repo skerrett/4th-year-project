@@ -49,7 +49,7 @@ module.exports = {
     end.setDate(end.getDate()+7);
     var lesson = [];
     for (let value of subject) {
-     var values =  await Lesson.find({}).where({'date': {'>=': start, '<': end},subject: value.id});
+     var values =  await Lesson.find({}).populate('subject').where({'date': {'>=': start, '<': end},subject: value.id});
      lesson.push(values);
       sails.log(values);
     }
