@@ -57,11 +57,11 @@ module.exports = {
 
   var myvar = myJson.replace(/[\[\]']+/g, '');
 
-  var x = [myvar];
 
 
 
-    return exits.success(x)
+
+    return exits.success(myvar)
 
   }
 
