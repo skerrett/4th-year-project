@@ -50,18 +50,23 @@ module.exports = {
     var lesson = [];
     for (let value of subject) {
      var values =  await Lesson.find({}).populate('subject').where({'date': {'>=': start, '<': end},subject: value.id});
-     lesson.push(values);
-      sails.log(values);
+      var obj = {
+        'name': values[0].subject.subjectName,
+        'date': values[0].date,
+        'id': values[0].id,
+      };
+     lesson.push(obj);
+      //sails.log(values);
     }
+
+    /*
     let myJson = JSON.stringify(lesson);
 
   var myvar = myJson.replace(/[\[\]']+/g, '');
-
-  var x = [myvar];
-
+*/
 
 
-    return exits.success(x)
+    return exits.success(lesson)
 
   }
 
