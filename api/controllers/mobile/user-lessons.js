@@ -55,10 +55,13 @@ module.exports = {
     }
     let myJson = JSON.stringify(lesson);
 
-    myvar = myJson.replace(/[\[\]']+/g, '');
+  var myvar = myJson.replace(/[\[\]']+/g, '');
+
+  var x = [myvar];
 
 
-    return exits.success(myvar)
+
+    return exits.success(x)
 
   }
 
