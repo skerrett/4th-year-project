@@ -49,13 +49,16 @@ module.exports = {
     end.setDate(end.getDate()+7);
     var lesson = [];
     for (let value of subject) {
-     var values =  await Lesson.find({}).populate('subject').where({'date': {'>=': start, '<': end},subject: value.id});
-      var obj = {
-        'name': values[0].subject.subjectName,
-        'date': values[0].date,
-        'id': values[0].id,
-      };
-     lesson.push(obj);
+     var values =  await Lesson.find({}).populate('subject').where({'date': {'>=': start, '<': end},subject: value.id}).sort(
+       'date ASC');
+     for(let x of values) {
+       var obj = {
+         'name': x.subject.subjectName,
+         'date': x.date,
+         'id': x.id,
+       };
+       lesson.push(obj);
+     }
       //sails.log(values);
     }
 
