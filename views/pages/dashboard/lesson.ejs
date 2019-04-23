@@ -1,21 +1,65 @@
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th>ID</th><th>Date</th><th>subject</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% for (var i = 0; i < lesson.length; i++) { %>
-    <tr>
+<head>
+  <title>Table V02</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <td><%= lesson[i].id %></td>
-        <td><%= lesson[i].date %></td>
-        <td><%= lesson[i].subject %></td>
-      <td><button type="button" class="btn btn-primary" onclick="location.href='/attendance?id=<%= lesson[i].id %>'">View</button></td>
 
-    </tr>
-  <% } %>
-  </tbody>
-</table>
+  <link rel="stylesheet" type="text/less" href="/styles/pages/dashboard/lesson.less">
+  <!--===============================================================================================-->
+</head>
+<body>
+
+<div id="lesson">
+  <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver3 m-b-110">
+          <div class="table100-head">
+            <table>
+              <thead>
+              <tr class="row100 head">
+                <th class="cell100 column1">Date</th>
+                <th class="cell100 column2">Lesson ID</th>
+                <th class="cell100 column3">Subject ID</th>
+                <th class="cell100 column4">View More</th>
+              </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="table100-body js-pscroll">
+            <table>
+
+              <% for (var i = 0; i < lesson.length; i++) { %>
+                <tbody>
+                <tr class="row100 body">
+                  <td class="cell100 column1"><%= lesson[i].date%></td>
+                  <td class="cell100 column2"><%= lesson[i].id %></td>
+                  <td class="cell100 column3"><%= lesson[i].subject %></td>
+                  <td class="cell100 column4"><a href="/attendance?id=<%= lesson[i].id %>" class="button4" style="background-color:#f14e4e">View More</a></td>
+                </tr>
+                </tbody>
+              <% } %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
+<script>
+  $('.js-pscroll').each(function(){
+    var ps = new PerfectScrollbar(this);
+
+    $(window).on('resize', function(){
+      ps.update();
+    })
+  });
+
+
+</script>
+<!--===============================================================================================-->
+
 
 <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

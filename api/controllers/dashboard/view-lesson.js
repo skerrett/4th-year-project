@@ -2,7 +2,8 @@ module.exports = async function lesson (req, res) {
 
   var subjectId = req.param('id');
 
-  var stud = await Lesson.find({subject: subjectId});
+  var stud = await Lesson.find({subject: subjectId}).sort(
+    'date ASC');
 
 
 

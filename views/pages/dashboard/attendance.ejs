@@ -1,46 +1,71 @@
+<head>
+  <title>Table V02</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<table class="table table-hover">
-  <thead>
-  <tr>
-    <th>ID</th><th>Name</th><th>surname</th><th>status</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% for (var i = 0; i < attendance.length; i++) { %>
-    <tr>
-      <td><%= attendance[i].id %></td>
-      <td><%= attendance[i].students.Fname %></td>
-      <td><%= attendance[i].students.Lname %></td>
-      <td><%= attendance[i].isPresent%>
-        <%if(attendance[i].isPresent == true) {%>
-        <td>
-          <button type="button" class="btn btn-danger" onclick="update1(this)">Mark Absent</button>
-      </td>
-<% } else {%>
-        <td>
-          <button type="button" class="btn btn-success" onclick="update2(this)">Mark Present</button>
-        </td>
-  <% } %>
-      <% } %>
-    </tr>
-  </tbody>
-</table>
+
+  <link rel="stylesheet" type="text/less" href="/styles/pages/dashboard/attendance.less">
+  <!--===============================================================================================-->
+</head>
+<body>
+
+<div id="attendance">
+  <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ver3 m-b-110">
+          <div class="table100-head">
+            <table>
+              <thead>
+              <tr class="row100 head">
+                <th class="cell100 column1">ID</th>
+                <th class="cell100 column2">Name</th>
+                <th class="cell100 column3">Surname</th>
+                <th class="cell100 column4">Status</th>
+                <th class="cell100 column5">View More</th>
+              </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="table100-body js-pscroll">
+            <table>
+              <tbody>
+              <% for (var i = 0; i < attendance.length; i++) { %>
+              <tr class="row100 body">
+                <td class="cell100 column1"><%=attendance[i].id%></td>
+                <td class="cell100 column2"><%=attendance[i].students.Fname%></td>
+                <td class="cell100 column3"><%=attendance[i].students.Lname%></td>
+                <%if(attendance[i].isPresent == true) {%>
+                  <td class="cell100 column4">Present</td>
+                  <td class="cell100 column5"><button type="button" class="button4" style="background-color:#f14e4e" onclick="update1(this)">Mark Absent</button></td>
+                <% } else {%>
+                  <td class="cell100 column4">Absent</td>
+                  <td class="cell100 column5"><button type="button" class="button4" style="background-color:green" onclick="update2(this)">Mark Present</button></td>
+
+                <% } %>
+              <% } %>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 
 <%- exposeLocalsToBrowser() %>
 <script type="text/javascript">
 
 
 
-
-
   function update1(x) {
-    var td = x.parentNode;
-    var interpret = td.previousSibling;
-    var interpret_value = interpret.innerHTML;
-    var meth = interpret.previousSibling.previousSibling
-    var hey = meth.previousSibling.previousSibling
-    var id = hey.previousSibling.previousSibling
-    var id_value = id.innerHTML;
+    var $row = $(x).closest("tr"),        // Finds the closest row <tr>
+      $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element
+
+      console.log(($tds).text());
+    var id_value = ($tds).text();
     var csrf = window.SAILS_LOCALS._csrf;
 
     $.ajax({
@@ -66,13 +91,10 @@
 
   }
   function update2(x) {
-    var td = x.parentNode;
-    var interpret = td.previousSibling;
-    var interpret_value = interpret.innerHTML;
-    var meth = interpret.previousSibling.previousSibling
-    var hey = meth.previousSibling.previousSibling
-    var id = hey.previousSibling.previousSibling;
-    var id_value = id.innerHTML;
+    var $row = $(x).closest("tr"),        // Finds the closest row <tr>
+      $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element
+
+    var id_value = ($tds).text();
     var csrf = window.SAILS_LOCALS._csrf;
 
     $.ajax({
