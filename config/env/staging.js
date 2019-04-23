@@ -2,6 +2,7 @@
  * Staging environment settings
  * (sails.config.*)
  *
+ * *
  * This is mostly a carbon copy of the production environment settings
  * in config/env/production.js, but with the overrides listed below.
  * For more detailed information and links about what these settings do
