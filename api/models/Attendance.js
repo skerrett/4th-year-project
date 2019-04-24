@@ -16,13 +16,5 @@ module.exports = {
     students: {
       model: 'student'
     }
-  },
+  }
 };
-/*
-  afterUpdate:fn(updatedRecord, proceed) {
-    if(updatedRecord.isPresent === true){
-
-    }
-}
-};
-*/

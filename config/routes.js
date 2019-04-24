@@ -57,11 +57,6 @@ module.exports.routes = {
   'PUT /mobile/login':    {action: 'mobile/user-login',csrf: false},
   'GET /mobile/lesson':    {action: 'mobile/user-lessons'},
 
-
-  //stats
-  'GET /statistics/home': {action: 'statistics/home'},
-  'GET /statistics/home/lessons': {action: 'statistics/lesson'},
-  'GET /statistics/home/students': {action: 'statistics/student'},
   //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
