@@ -1,0 +1,783 @@
+#subject {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #9fcdff;
+  /*//////////////////////////////////////////////////////////////////
+  [ FONT ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /*//////////////////////////////////////////////////////////////////
+  [ Scroll bar ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  /*==================================================================
+  [ Fix header ]*/
+  /*==================================================================
+[ Ver3 ]*/
+  /*---------------------------------------------*/
+}
+@font-face {
+  font-family: Lato-Regular;
+  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: Lato-Bold;
+  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Bold.ttf');
+}
+#subject * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#subject body,
+#subject html {
+  height: 100%;
+  font-family: sans-serif;
+}
+#subject a {
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+#subject a:focus {
+  outline: none !important;
+}
+#subject a:hover {
+  text-decoration: none;
+}
+#subject a.button4 {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s;
+}
+#subject a.button4:hover {
+  border-color: #ffffff;
+}
+@media all and (max-width: 30em) {
+  #subject a.button4 {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
+#subject h1,
+#subject h2,
+#subject h3,
+#subject h4,
+#subject h5,
+#subject h6 {
+  margin: 0px;
+}
+#subject p {
+  margin: 0px;
+}
+#subject ul,
+#subject li {
+  margin: 0px;
+  list-style-type: none;
+}
+#subject input {
+  display: block;
+  outline: none;
+  border: none !important;
+}
+#subject textarea {
+  display: block;
+  outline: none;
+}
+#subject textarea:focus,
+#subject input:focus {
+  border-color: transparent !important;
+}
+#subject button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+#subject button:hover {
+  cursor: pointer;
+}
+#subject iframe {
+  border: none !important;
+}
+#subject .js-pscroll {
+  position: relative;
+  overflow: hidden;
+}
+#subject .table100 .ps__rail-y {
+  width: 9px;
+  background-color: transparent;
+  opacity: 1 !important;
+  right: 5px;
+}
+#subject .table100 .ps__rail-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(70%);
+  left: 0;
+  top: 15px;
+}
+#subject .table100 .ps__rail-y .ps__thumb-y {
+  width: 100%;
+  right: 0;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+#subject .table100 .ps__rail-y .ps__thumb-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #cccccc;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(70%);
+  left: 0;
+  top: 15px;
+}
+#subject .limiter {
+  width: 1500px;
+  margin: 0 auto;
+}
+#subject .container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #9fcdff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+#subject .wrap-table100 {
+  width: 1300px;
+}
+#subject .table100 {
+  background-color: #fff;
+}
+#subject table {
+  width: 100%;
+}
+#subject th,
+#subject td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+#subject .column1 {
+  width: 33%;
+  padding-left: 40px;
+}
+#subject .column2 {
+  width: 13%;
+}
+#subject .column3 {
+  width: 22%;
+}
+#subject .column4 {
+  width: 19%;
+}
+#subject .table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#subject .table100-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#subject .table100 {
+  position: relative;
+  padding-top: 60px;
+}
+#subject .table100-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#subject .table100-body {
+  max-height: 585px;
+  overflow: auto;
+}
+#subject .table100.ver3 {
+  background-color: #393939;
+}
+#subject .table100.ver3 th {
+  font-family: Lato-Bold;
+  font-size: 22px;
+  color: #00ad5f;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: #393939;
+}
+#subject .table100.ver3 td {
+  font-family: Lato-Regular;
+  font-size: 22px;
+  color: #FFFFFF;
+  line-height: 1.4;
+  background-color: #222222;
+}
+#subject .table100.ver3 {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+#subject .table100.ver3 .ps__rail-y {
+  right: 5px;
+}
+#subject .table100.ver3 .ps__rail-y::before {
+  background-color: #4e4e4e;
+}
+#subject .table100.ver3 .ps__rail-y .ps__thumb-y::before {
+  background-color: #00ad5f;
+}
+#lesson {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #9fcdff;
+  /*//////////////////////////////////////////////////////////////////
+  [ FONT ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /*//////////////////////////////////////////////////////////////////
+  [ Scroll bar ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  /*==================================================================
+  [ Fix header ]*/
+  /*==================================================================
+[ Ver3 ]*/
+  /*---------------------------------------------*/
+}
+@font-face {
+  font-family: Lato-Regular;
+  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: Lato-Bold;
+  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Bold.ttf');
+}
+#lesson * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#lesson body,
+#lesson html {
+  height: 100%;
+  font-family: sans-serif;
+}
+#lesson a {
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+#lesson a:focus {
+  outline: none !important;
+}
+#lesson a:hover {
+  text-decoration: none;
+}
+#lesson a.button4 {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s;
+}
+#lesson a.button4:hover {
+  border-color: #ffffff;
+}
+@media all and (max-width: 30em) {
+  #lesson a.button4 {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
+#lesson h1,
+#lesson h2,
+#lesson h3,
+#lesson h4,
+#lesson h5,
+#lesson h6 {
+  margin: 0px;
+}
+#lesson p {
+  margin: 0px;
+}
+#lesson ul,
+#lesson li {
+  margin: 0px;
+  list-style-type: none;
+}
+#lesson input {
+  display: block;
+  outline: none;
+  border: none !important;
+}
+#lesson textarea {
+  display: block;
+  outline: none;
+}
+#lesson textarea:focus,
+#lesson input:focus {
+  border-color: transparent !important;
+}
+#lesson button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+#lesson button:hover {
+  cursor: pointer;
+}
+#lesson iframe {
+  border: none !important;
+}
+#lesson .js-pscroll {
+  position: relative;
+  overflow: hidden;
+}
+#lesson .table100 .ps__rail-y {
+  width: 9px;
+  background-color: transparent;
+  opacity: 1 !important;
+  right: 5px;
+}
+#lesson .table100 .ps__rail-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(70%);
+  left: 0;
+  top: 15px;
+}
+#lesson .table100 .ps__rail-y .ps__thumb-y {
+  width: 100%;
+  right: 0;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+#lesson .table100 .ps__rail-y .ps__thumb-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #cccccc;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(70%);
+  left: 0;
+  top: 15px;
+}
+#lesson .limiter {
+  width: 1500px;
+  margin: 0 auto;
+}
+#lesson .container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #9fcdff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+#lesson .wrap-table100 {
+  width: 1300px;
+}
+#lesson .table100 {
+  background-color: #fff;
+}
+#lesson table {
+  width: 100%;
+}
+#lesson th,
+#lesson td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+#lesson .column1 {
+  width: 33%;
+  padding-left: 40px;
+}
+#lesson .column2 {
+  width: 13%;
+}
+#lesson .column3 {
+  width: 22%;
+}
+#lesson .column4 {
+  width: 19%;
+}
+#lesson .table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#lesson .table100-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#lesson .table100 {
+  position: relative;
+  padding-top: 60px;
+}
+#lesson .table100-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#lesson .table100-body {
+  max-height: 585px;
+  overflow: auto;
+}
+#lesson .table100.ver3 {
+  background-color: #393939;
+}
+#lesson .table100.ver3 th {
+  font-family: Lato-Bold;
+  font-size: 22px;
+  color: #00ad5f;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: #393939;
+}
+#lesson .table100.ver3 td {
+  font-family: Lato-Regular;
+  font-size: 22px;
+  color: #FFFFFF;
+  line-height: 1.4;
+  background-color: #222222;
+}
+#lesson .table100.ver3 {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+#lesson .table100.ver3 .ps__rail-y {
+  right: 5px;
+}
+#lesson .table100.ver3 .ps__rail-y::before {
+  background-color: #4e4e4e;
+}
+#lesson .table100.ver3 .ps__rail-y .ps__thumb-y::before {
+  background-color: #00ad5f;
+}
+#attendance {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #9fcdff;
+  /*//////////////////////////////////////////////////////////////////
+  [ FONT ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /*//////////////////////////////////////////////////////////////////
+  [ Scroll bar ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  /*==================================================================
+  [ Fix header ]*/
+  /*==================================================================
+[ Ver3 ]*/
+  /*---------------------------------------------*/
+}
+@font-face {
+  font-family: Lato-Regular;
+  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Regular.ttf');
+}
+@font-face {
+  font-family: Lato-Bold;
+  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Bold.ttf');
+}
+#attendance * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#attendance body,
+#attendance html {
+  height: 100%;
+  font-family: sans-serif;
+}
+#attendance a {
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+#attendance a:focus {
+  outline: none !important;
+}
+#attendance a:hover {
+  text-decoration: none;
+}
+#attendance button.button4 {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s;
+}
+#attendance button.button4:hover {
+  border-color: #ffffff;
+}
+@media all and (max-width: 30em) {
+  #attendance button.button4 {
+    display: block;
+    margin: 0.2em auto;
+  }
+}
+#attendance h1,
+#attendance h2,
+#attendance h3,
+#attendance h4,
+#attendance h5,
+#attendance h6 {
+  margin: 0px;
+}
+#attendance p {
+  margin: 0px;
+}
+#attendance ul,
+#attendance li {
+  margin: 0px;
+  list-style-type: none;
+}
+#attendance input {
+  display: block;
+  outline: none;
+  border: none !important;
+}
+#attendance textarea {
+  display: block;
+  outline: none;
+}
+#attendance textarea:focus,
+#attendance input:focus {
+  border-color: transparent !important;
+}
+#attendance button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+#attendance button:hover {
+  cursor: pointer;
+}
+#attendance iframe {
+  border: none !important;
+}
+#attendance .js-pscroll {
+  position: relative;
+  overflow: hidden;
+}
+#attendance .table100 .ps__rail-y {
+  width: 9px;
+  background-color: transparent;
+  opacity: 1 !important;
+  right: 5px;
+}
+#attendance .table100 .ps__rail-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ebebeb;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(70%);
+  left: 0;
+  top: 15px;
+}
+#attendance .table100 .ps__rail-y .ps__thumb-y {
+  width: 100%;
+  right: 0;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+#attendance .table100 .ps__rail-y .ps__thumb-y::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #cccccc;
+  border-radius: 5px;
+  width: 100%;
+  height: calc(70%);
+  left: 0;
+  top: 15px;
+}
+#attendance .limiter {
+  width: 1500px;
+  margin: 0 auto;
+}
+#attendance .container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #9fcdff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+#attendance .wrap-table100 {
+  width: 1300px;
+}
+#attendance .table100 {
+  background-color: #fff;
+}
+#attendance table {
+  width: 100%;
+}
+#attendance th,
+#attendance td {
+  font-weight: unset;
+  padding-right: 10px;
+}
+#attendance .column1 {
+  width: 15%;
+  padding-left: 40px;
+}
+#attendance .column2 {
+  width: 13%;
+}
+#attendance .column3 {
+  width: 22%;
+}
+#attendance .column4 {
+  width: 19%;
+}
+#attendance .column5 {
+  width: 19%;
+}
+#attendance .table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#attendance .table100-body td {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#attendance .table100 {
+  position: relative;
+  padding-top: 60px;
+}
+#attendance .table100-head {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+#attendance .table100-body {
+  max-height: 585px;
+  overflow: auto;
+}
+#attendance .table100.ver3 {
+  background-color: #393939;
+}
+#attendance .table100.ver3 th {
+  font-family: Lato-Bold;
+  font-size: 22px;
+  color: #00ad5f;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: #393939;
+}
+#attendance .table100.ver3 td {
+  font-family: Lato-Regular;
+  font-size: 22px;
+  color: #FFFFFF;
+  line-height: 1.4;
+  background-color: #222222;
+}
+#attendance .table100.ver3 {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+#attendance .table100.ver3 .ps__rail-y {
+  right: 5px;
+}
+#attendance .table100.ver3 .ps__rail-y::before {
+  background-color: #4e4e4e;
+}
+#attendance .table100.ver3 .ps__rail-y .ps__thumb-y::before {
+  background-color: #00ad5f;
+}
