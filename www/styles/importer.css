@@ -1024,14 +1024,6 @@ body {
 [ Ver3 ]*/
   /*---------------------------------------------*/
 }
-@font-face {
-  font-family: Lato-Regular;
-  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Regular.ttf');
-}
-@font-face {
-  font-family: Lato-Bold;
-  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Bold.ttf');
-}
 #subject * {
   margin: 0px;
   padding: 0px;
@@ -1043,7 +1035,7 @@ body {
   font-family: sans-serif;
 }
 #subject a {
-  margin: 0px;
+  margin: 0;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -1085,14 +1077,14 @@ body {
 #subject h4,
 #subject h5,
 #subject h6 {
-  margin: 0px;
+  margin: 0;
 }
 #subject p {
-  margin: 0px;
+  margin: 0;
 }
 #subject ul,
 #subject li {
-  margin: 0px;
+  margin: 0;
   list-style-type: none;
 }
 #subject input {
@@ -1228,7 +1220,7 @@ body {
   background-color: #393939;
 }
 #subject .table100.ver3 th {
-  font-family: Lato-Bold;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
   color: #00ad5f;
   line-height: 1.4;
