@@ -55,7 +55,7 @@ module.exports = {
       //url: postgres ,
 
       adapter: require('sails-mysql'),
-      url: heroku_datastores,
+      url: 'mysql://bb8ccae427d778:2b13e279@eu-cdbr-west-02.cleardb.net/heroku_2efd7961ccc3992?reconnect=true',
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.
@@ -259,6 +259,7 @@ module.exports = {
     ***************************************************************************/
     onlyAllowOrigins: [
        'https://my-attendance-app-staging.herokuapp.com',
+       'http://my-attendance-app-staging.herokuapp.com'
     //   'https://staging.example.com',
     ],
 
