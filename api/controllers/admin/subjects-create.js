@@ -1,5 +1,9 @@
 module.exports = async function create (req, res) {
 
+  if(req.param('subject') === ''){
+    return res.notFound();
+  }
+  else {
   Subject.findOrCreate({ subjectName: req.param('subject'), lecturer: req.param('lecturer') }, {subjectName: req.param('subject'), lecturer: req.param('lecturer')})
       .exec(async(err, subject, wasCreated)=> {
         if(wasCreated) {
@@ -11,6 +15,7 @@ module.exports = async function create (req, res) {
           return res.notFound();
           }
       });
+  }
 
 };
 

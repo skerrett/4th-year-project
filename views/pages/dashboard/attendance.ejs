@@ -1,25 +1,22 @@
-<head>
-  <title>Table V02</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
   <link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
   <link rel="stylesheet" href="/styles/importer.css">
   <link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
   <!--===============================================================================================-->
-</head>
-<body>
+
 
 <div id="attendance">
   <div class="limiter">
     <div class="container-table100">
       <div class="wrap-table100">
-        <div class="table100 ver3 m-b-110">
-          <div class="table100-head">
-            <table>
-              <thead>
-              <tr class="row100 head">
+        <div class="form-group pull-right">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Surname">
+        </div>
+        <div class="table100 ">
+          <table id="myTable">
+            <thead>
+            <tr class="table100-head">
                 <th class="cell100 column1">ID</th>
                 <th class="cell100 column2">Name</th>
                 <th class="cell100 column3">Surname</th>
@@ -27,10 +24,6 @@
                 <th class="cell100 column5">View More</th>
               </tr>
               </thead>
-            </table>
-          </div>
-          <div class="table100-body js-pscroll">
-            <table>
               <tbody>
               <% for (var i = 0; i < attendance.length; i++) { %>
               <tr class="row100 body">
@@ -48,14 +41,13 @@
               <% } %>
               </tr>
               </tbody>
-            </table>
-          </div>
+
+          </table>
         </div>
       </div>
     </div>
   </div>
 </div>
-</body>
 
 <%- exposeLocalsToBrowser() %>
 <script type="text/javascript">
@@ -120,6 +112,28 @@
     })
     ;
 
+  }
+
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[2];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
   }
 
 </script>

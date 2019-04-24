@@ -1,45 +1,71 @@
-<div>
-  <form method="POST" action="controllers/admin/lesson-create.js" id="form">
-    <div class="form-group row">
-      <label for="datetime" class="col-2 col-form-label">Date and time</label>
-      <div class="col-6">
-        <input class="form-control" type="datetime-local" value="2019-08-19T13:45:00" id="datetime">
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+
+<div id="lesson-create">
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Create some Lessons
+				</span>
+
+        <div class="wrap-input100 validate-input" data-validate="Please enter the date of the lesson">
+          <input class="input100" type="datetime-local" id="datetime" name="datetime" placeholder="2019-04-24T12:00:00">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject" name="subject" placeholder="<%= subject[0].id%>">
+          <span class="focus-input100"></span>
+        </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio"  class="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              Repeat for semester
+            </label>
+          </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                Once off creation
+              </label>
+            </div>
+
+      </form>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" value="Submit" id="submit" onclick="SendAjax();">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Submit
+						</span>
+        </button>
       </div>
     </div>
-    <div class="form-group row">
-      <label for="subject" class="col-2 col-form-label">subject ID</label>
-      <div class="col-6">
-      <input class="form-control" type="text" name="subject" id ="subject" value=<%= subject[0].id%>>
-    </div>
-    </div>
-    <fieldset class="form-group">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-          This class occurs every week this semester
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-          This class doesn't occur every week
-        </label>
-      </div>
-    </fieldset>
-    <input type="button" value="Submit" id="submit" onclick="SendAjax();">
-  </form>
+  </div>
 </div>
 <%- exposeLocalsToBrowser() %>
 <script>
   // When click on button store values from form fields into variables
   function SendAjax() {
     let subject = $("#subject").val();
+    console.log(subject);
+    if(subject === ""){
+      alert("Recheck all values are entered")
+      return
+    }
     let datetime = $("#datetime").val();
-    var button = $(".form-check-input:checked").val();
+    console.log(datetime)
+    if(datetime === ""){
+      alert("Recheck all values are entered")
+    }
+    var button = $(".radio:checked").val();
+    console.log(button)
     const csrf = window.SAILS_LOCALS._csrf;
     // Check if fields are empty
 
     // AJAX code to submit form
+
     $.ajax ({
       type: "POST",
       url: "/admin/create-lesson",
@@ -54,5 +80,6 @@
         //alert("this entry already exists");
       }
     })
+    
   }
 </script>
