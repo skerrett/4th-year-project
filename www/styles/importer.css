@@ -82,7 +82,6 @@ img {
   position: absolute;
   right: -5px;
   top: -5px;
-  background-image: url('/images/icon-close.png');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
@@ -196,11 +195,11 @@ body {
   -ms-animation-iteration-count: infinite;
   -o-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  -moz-animation-direction: linear;
-  -webkit-animation-direction: linear;
+  -moz-animation-direction: initial;
+  -webkit-animation-direction: initial;
   -ms-animation-direction: linear;
-  -o-animation-direction: linear;
-  animation-direction: linear;
+  -o-animation-direction: initial;
+  animation-direction: initial;
 }
 @-webkit-keyframes fade-in {
   0% {

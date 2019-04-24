@@ -50,15 +50,5 @@
 </div>
 </body>
 <%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
-<script>
-  $('.js-pscroll').each(function(){
-    var ps = new PerfectScrollbar(this);
 
-    $(window).on('resize', function(){
-      ps.update();
-    })
-  });
-
-
-</script>
 <!--===============================================================================================-->
