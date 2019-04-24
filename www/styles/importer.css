@@ -1236,7 +1236,7 @@ body {
   background-color: #393939;
 }
 #subject .table100.ver3 td {
-  font-family: Lato-Regular;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
   color: #FFFFFF;
   line-height: 1.4;
@@ -1283,14 +1283,6 @@ body {
   /*==================================================================
 [ Ver3 ]*/
   /*---------------------------------------------*/
-}
-@font-face {
-  font-family: Lato-Regular;
-  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Regular.ttf');
-}
-@font-face {
-  font-family: Lato-Bold;
-  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Bold.ttf');
 }
 #lesson * {
   margin: 0px;
@@ -1488,7 +1480,7 @@ body {
   background-color: #393939;
 }
 #lesson .table100.ver3 th {
-  font-family: Lato-Bold;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
   color: #00ad5f;
   line-height: 1.4;
@@ -1496,7 +1488,7 @@ body {
   background-color: #393939;
 }
 #lesson .table100.ver3 td {
-  font-family: Lato-Regular;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
   color: #FFFFFF;
   line-height: 1.4;
@@ -1543,14 +1535,6 @@ body {
   /*==================================================================
 [ Ver3 ]*/
   /*---------------------------------------------*/
-}
-@font-face {
-  font-family: Lato-Regular;
-  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Regular.ttf');
-}
-@font-face {
-  font-family: Lato-Bold;
-  src: url('/assets/dependencies/font-awesome-4/fonts/Lato/Lato-Bold.ttf');
 }
 #attendance * {
   margin: 0px;
@@ -1751,7 +1735,7 @@ body {
   background-color: #393939;
 }
 #attendance .table100.ver3 th {
-  font-family: Lato-Bold;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
   color: #00ad5f;
   line-height: 1.4;
@@ -1759,7 +1743,7 @@ body {
   background-color: #393939;
 }
 #attendance .table100.ver3 td {
-  font-family: Lato-Regular;
+  font-family: "Roboto", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
   color: #FFFFFF;
   line-height: 1.4;
