@@ -44,7 +44,7 @@ module.exports = {
       select:['id']
     });
 
-    var start = new Date();
+    const start = new Date();
     let end = new Date();
     end.setDate(end.getDate()+7);
     var lesson = [];
