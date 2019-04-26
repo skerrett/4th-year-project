@@ -2,8 +2,25 @@ module.exports = async function lesson (req, res) {
 
   var subjectId = req.param('id');
 
-  var stud = await Lesson.find({subject: subjectId}).sort(
+  const start = new Date();
+  let end = new Date();
+  end.setDate(end.getDate()+14);
+
+  var stud = await Lesson.find({}).where({'date': {'>=': start, '<': end},subject: subjectId}).sort(
     'date ASC');
+
+
+  var lessons = [];
+  for(let x of stud) {
+
+    var split_date = x.date.toString().split('G');
+    var obj = {
+      'subject': x.subject,
+      'date': split_date[0],
+      'id': x.id,
+    };
+lessons.push(obj);
+  }
 
 
 
@@ -17,7 +34,7 @@ module.exports = async function lesson (req, res) {
   // named "name" to the value of the user's name.
 
 
-  return res.view('pages/dashboard/lesson', {lesson: stud});
+  return res.view('pages/dashboard/lesson', {lesson: lessons});
 
 
 

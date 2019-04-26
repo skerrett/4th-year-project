@@ -18,7 +18,7 @@ module.exports = async function subject (req, res) {
 
 
 // find the id of the lecture who is logged in a return the classes they teach.
-var sub = await Subject.find({lecturer: userId});
+  var sub = await Subject.find({lecturer: userId});
 
 
 //end of testing safe to remove
@@ -29,11 +29,11 @@ var sub = await Subject.find({lecturer: userId});
     return res.redirect('/welcome');
 
   }
-    // Display the welcome view, setting the view variable
-    // named "name" to the value of the user's name.
+  // Display the welcome view, setting the view variable
+  // named "name" to the value of the user's name.
 
 
-    return res.view('pages/dashboard/subject', {subject: sub});
+  return res.view('pages/history/subject', {subject: sub});
 
 
 };

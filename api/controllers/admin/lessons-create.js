@@ -5,7 +5,7 @@ module.exports = async function create (req, res) {
 
   var d = new Date(date);
 
-  d.setDate(d.getDate()+ 21);
+  d.setDate(d.getDate());
 
 
 

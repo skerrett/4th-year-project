@@ -7,7 +7,20 @@
 <div id="lesson">
   <div class="limiter">
     <div class="container-table100">
-      <div class="wrap-table100">
+      <div class="wrap-table100">        <div class="form-group pull-left" style="padding-right: 5px">
+          <label for="start">Start date:</label>
+          <input class="input100" type="datetime-local" id="start" name="start" placeholder="2019-04-24T12:00:00">
+        </div>
+        <div class="form-group pull-left" style="padding-right: 5px">
+          <label for="start">End date:</label>
+          <input class="input100" type="datetime-local" id="end" name="end" placeholder="2019-04-24T12:00:00">
+          <button class="contact100-form-btn" value="Submit" id="submit" onclick="SendAjax();">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Submit
+						</span>
+          </button>
+        </div>
         <div class="table100 ">
           <table>
             <thead>
@@ -45,7 +58,21 @@
       ps.update();
     })
   });
+  function SendAjax() {
 
+    let start = $("#start").val();
+    let end = $("#end").val();
+    var subject = <%- JSON.stringify(lesson) %>
+      console.log(subject[0].subject);
+
+    subject = subject[0].subject;
+    if(start.length < 1 || end.length < 1){
+      alert("Start and end dates must be selected!");
+      return
+    }
+
+    window.location.href ="/history/lesson?id="+subject+"&start="+start+"&end="+end;
+  }
 
 </script>
 <!--===============================================================================================-->

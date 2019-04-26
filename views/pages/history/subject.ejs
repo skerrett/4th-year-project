@@ -1,0 +1,41 @@
+
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+<!--===============================================================================================-->
+
+<div id="subject">
+  <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="table100 ">
+          <table>
+            <thead>
+            <tr class="table100-head">
+              <th class="cell100 column1">Subject name</th>
+              <th class="cell100 column2">Lecturer ID</th>
+              <th class="cell100 column3">Subject ID</th>
+              <th class="cell100 column4">View More</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (var i = 0; i < subject.length; i++) { %>
+              <tr class="row100 body">
+                <td class="cell100 column1"><%= subject[i].subjectName %></td>
+                <td class="cell100 column2"><%= subject[i].lecturer %></td>
+                <td class="cell100 column3"><%= subject[i].id %></td>
+                <td class="cell100 column4"><a href="/history/lesson?id=<%= subject[i].id %>" class="button4" style="background-color:#4158d0">View More</a></td>
+              </tr>
+            <% } %>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>

@@ -1,56 +1,75 @@
-<div>
-  <form method="POST" action="controllers/admin/student-subjects.js" id="form">
-    <div class="form-group row">
-      <label for="studentID" class="col-2 col-form-label">Student ID</label>
-      <div class="col-6">
-        <input class="form-control" type="text" value=<%=student[0].id%> id="studentID">
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+
+<div id="lesson-create">
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Create some Lessons
+				</span>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="studentID" name="studentID" placeholder="<%=student[0].id%>">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject1" name="subject1" placeholder="Enter a subjectID">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject2" name="subject2" placeholder="Enter a subjectID">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject3" name="subject3" placeholder="Enter a subjectID">
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject4" name="subject4" placeholder="Enter a subjectID">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject5" name="subject5" placeholder="Enter a subjectID">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="subject6" name="subject6" placeholder="Enter a subjectID">
+          <span class="focus-input100"></span>
+        </div>
+
+      </form>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" value="Submit" id="submit" onclick="SendAjax();">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Submit
+						</span>
+        </button>
       </div>
     </div>
-    <div class="form-group row">
-      <label for="subject1" class="col-2 col-form-label">Subject 1</label>
-      <div class="col-6">
-        <input class="form-control" type="text" name="subject1" id ="subject1">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="subject2" class="col-2 col-form-label">Subject 2</label>
-      <div class="col-6">
-        <input class="form-control" type="text" name="subject2" id ="subject2">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="subject3" class="col-2 col-form-label">Subject 3</label>
-      <div class="col-6">
-        <input class="form-control" type="text" name="subject3" id ="subject3">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="subject4" class="col-2 col-form-label">Subject 4</label>
-      <div class="col-6">
-        <input class="form-control" type="text" name="subject4" id ="subject4">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="subject5" class="col-2 col-form-label">Subject 5</label>
-      <div class="col-6">
-        <input class="form-control" type="text" name="subject5" id ="subject5">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="subject6" class="col-2 col-form-label">Subject 6</label>
-      <div class="col-6">
-        <input class="form-control" type="text" name="subject6" id ="subject6">
-      </div>
-    </div>
-    <input type="button" value="Submit" id="submit" onclick="SendAjax();">
-  </form>
+  </div>
 </div>
 <%- exposeLocalsToBrowser() %>
 <script>
   // When click on button store values from form fields into variables
   function SendAjax() {
     let student = $("#studentID").val();
+    if(student === ""){
+      alert("Recheck all values are entered")
+      return
+    }
     let subject1 = $("#subject1").val();
+    if(subject1 === ""){
+      alert("Recheck all values are entered")
+      return
+    }
     let subject2 = $("#subject2").val();
     let subject3 = $("#subject3").val();
     let subject4 = $("#subject4").val();

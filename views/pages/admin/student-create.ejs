@@ -1,33 +1,61 @@
-<div>
-  <form method="POST" action="controllers/admin/student-create.js" id="form">
-      <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="fName">First Name</label>
-          <input type="text" class="form-control" id="fName" placeholder="Darren">
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+
+<div id="lesson-create">
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Create some Students
+				</span>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Subject ID">
+          <input class="input100" type="text" id ="fName" name="fName" placeholder="Darren">
+          <span class="focus-input100"></span>
         </div>
-      </div>
-        <div class="form-row">
-        <div class="form-group col-md-4">
-          <label for="Surname">Surname</label>
-          <input type="text" class="form-control" id="Surname" placeholder="Skerrett">
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter the Surname">
+          <input class="input100" type="text" id ="Surname" name="Surname" placeholder="Skerrett">
+          <span class="focus-input100"></span>
         </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter the Surname">
+          <input class="input100" type="text" id ="StudentCode" name="StudentCode" placeholder="245674536">
+          <span class="focus-input100"></span>
         </div>
-    <div class="form-row">
-      <div class="form-group col-md-4">
-        <label for="StudentCode">Student Code</label>
-        <input type="text" class="form-control" id="StudentCode" placeholder="23453212467894">
-      </div>
+      </form>
+        <div class="container-contact100-form-btn">
+          <button class="contact100-form-btn" value="Submit" id="submit" onclick="SendAjax();">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Submit
+						</span>
+          </button>
+        </div>
+
     </div>
-    <input type="button" value="Submit" id="submit" onclick="SendAjax();">
-  </form>
+  </div>
 </div>
 <%- exposeLocalsToBrowser() %>
 <script>
   // When click on button store values from form fields into variables
   function SendAjax() {
     let fName = $("#fName").val();
+    if(fName === ""){
+      alert("Recheck all values are entered")
+      return
+    }
     let surname = $("#Surname").val();
+    if(surname === ""){
+      alert("Recheck all values are entered")
+      return
+    }
     let studentCode = $("#StudentCode").val();
+    if(studentCode === ""){
+      alert("Recheck all values are entered")
+      return
+    }
     const csrf = window.SAILS_LOCALS._csrf;
     // Check if fields are empty
 
