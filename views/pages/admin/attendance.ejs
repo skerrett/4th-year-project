@@ -1,0 +1,143 @@
+
+
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+<!--===============================================================================================-->
+
+
+<div id="adminAttendance">
+  <div class="limiter">
+    <div class="container-table100">
+      <div class="wrap-table100">
+        <div class="form-group pull-right">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Surname">
+        </div>
+        <div class="table100 ">
+          <table id="myTable">
+            <thead>
+            <tr class="table100-head">
+              <th class="cell100 column1">ID</th>
+              <th class="cell100 column2">Name</th>
+              <th class="cell100 column3">Surname</th>
+              <th class="cell100 column4">Status</th>
+              <th class="cell100 column5">Change Status</th>
+              <th class="cell100 column5">Edit</th>
+              <th class="cell100 column6">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% for (var i = 0; i < attendance.length; i++) { %>
+            <tr class="row100 body">
+              <td class="cell100 column1"><%=attendance[i].id%></td>
+              <td class="cell100 column2"><%=attendance[i].students.Fname%></td>
+              <td class="cell100 column3"><%=attendance[i].students.Lname%></td>
+              <%if(attendance[i].isPresent == true) {%>
+                <td class="cell100 column4">Present</td>
+                <td class="cell100 column5"><button class="button4" style="background-color:#f14e4e" onclick="update1(this)">Change</button></td>
+              <% } else {%>
+                <td class="cell100 column4">Absent</td>
+                <td class="cell100 column5"><button class="button4" style="background-color:green" onclick="update2(this)">Change</button></td>
+
+              <% } %>
+              <td class="cell100 column5"><a href="/admin/lessons/edit?id=<%= attendance[i].id %>" class="button4" style="background-color:#1a8cff">Edit</a></td>
+              <td class="cell100 column6"><button  class="button4" style="background-color:#ff1a1a" onclick="update(this)">Delete</button></td>
+              <% } %>
+            </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- exposeLocalsToBrowser() %>
+<script type="text/javascript">
+
+
+
+  function update1(x) {
+    var $row = $(x).closest("tr"),        // Finds the closest row <tr>
+      $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element
+
+    console.log(($tds).text());
+    var id_value = ($tds).text();
+    var csrf = window.SAILS_LOCALS._csrf;
+
+    $.ajax({
+      url: '/attendance/'+id_value, //Your api url
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      type: 'PATCH',   //type is any HTTP method
+      data: {
+        "isPresent": "false"
+      },
+      _csrf: csrf,
+      //Data as js object
+      success: function () {
+        window.location.reload(true);
+      },
+      error: function () {
+        console.log(window.SAILS_LOCALS._csrf);
+
+      }
+    })
+    ;
+
+  }
+  function update2(x) {
+    var $row = $(x).closest("tr"),        // Finds the closest row <tr>
+      $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element
+
+    var id_value = ($tds).text();
+    var csrf = window.SAILS_LOCALS._csrf;
+
+    $.ajax({
+      url: '/attendance/'+id_value,
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },//Your api url
+      type: 'PATCH', //type is any HTTP method
+      data: {
+        "isPresent": "true",
+      },
+      _csrf: csrf,
+      //Data as js object
+      success: function () {
+        window.location.reload(true);
+      },
+      error: function () {
+        console.log(window.SAILS_LOCALS._csrf);
+        console.log("fail");
+      }
+    })
+    ;
+
+  }
+
+  function myFunction() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[2];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+</script>

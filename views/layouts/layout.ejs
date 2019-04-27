@@ -31,7 +31,20 @@
           <!-- LOGGED-IN NAVIGATION -->
           <% var me;
           if(me) { %>
-          <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/contact">Help</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/welcome">Home</a>
+          <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/subject">Schedule</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/history">History</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/statistics/home">Statistics</a>
+            <div class="nav-item dropdown d-none d-sm-block">
+              <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+              <div class="dropdown-menu account-menu" aria-labelledby="header-account-menu-link">
+                <a class="dropdown-item" href="/admin/subject/create">Create Subjects</a>
+                <a class="dropdown-item" href=" /admin/lesson/create">Create Lessons</a>
+                <a class="dropdown-item" href="/admin/student/create">Create Students</a>
+                <a class="dropdown-item" href="/admin/studentSubject">Enroll Students</a>
+                <a class="dropdown-item" href="/admin/users">Edit/Delete</a>
+              </div>
+            </div>
           <!-- Only in desktop nav -->
           <div class="nav-item dropdown d-none d-sm-block">
             <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>

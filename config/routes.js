@@ -46,11 +46,14 @@ module.exports.routes = {
 
   //"GET /csrfToken": { action: "security/grant-csrf-token" },
 
-  'GET /admin/subject':             { action:   'admin/view-admin-subjects' },
+  'GET /admin/subject':             { action:   'admin/view-subjects' },
+  'GET /admin/lesson':               { action:   'admin/view-lessons' },
+  'GET /admin/attendance':               { action:   'admin/view-attendance' },
   'GET /admin/subject/create':      { action:    'admin/view-admin-subjects-create'},
   'GET /admin/student/create':      { action:    'admin/view-student-create'},
-  'GET /admin/lesson':              { action:   'admin/view-lesson-create' },
+  'GET /admin/lesson/create':       { action:   'admin/view-lesson-create' },
   'GET /admin/studentSubject':      { action:   'admin/view-student-subjects' },
+  'GET /admin/users':               {action: 'admin/view-users'},
   'POST /admin/create-subject':     {action: 'admin/subjects-create'},
   'POST /admin/create-lesson':      {action: 'admin/lessons-create'},
   'POST /admin/create-student':     {action: 'admin/student-create'},
