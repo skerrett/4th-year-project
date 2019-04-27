@@ -4,7 +4,7 @@ module.exports = async function updateAttendance(req, res) {
     select: ['id']});
   if (studentId === undefined || studentId.length === 0) {
 
-  return res.status(401);
+  return res.badRequest();
   }
   await Attendance.update({lessons: req.param('lesson'),students: studentId.id }).set({
     isPresent:true
