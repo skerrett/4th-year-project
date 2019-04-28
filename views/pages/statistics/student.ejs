@@ -104,8 +104,8 @@
       alert("Start and end dates must be selected!");
       return
     }
-    var names = name.split("/")
-    console.log("My search: " +"  "+ names[0] + "ID: "+names[1] +"  "+ start + end +"  "+ type)
+    var names = name.split("/");
+    console.log("My search: " +"  "+ names[0] + "ID: "+names[1] +"  "+ start + end +"  "+ type);
 
     window.location.href = '/statistics/home/'+type.toLowerCase()+'?id='+names[1]+"&start="+start+"&end="+end;
   }

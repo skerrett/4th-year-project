@@ -87,10 +87,10 @@
 
   var lable = <%- JSON.stringify(data) %>
     console.log(lable[0].name);
-  var lables = []
-  var data = []
+  var lables = [];
+  var data = [];
   for(let i = 0; i < lable.length; i++) {
-  lables.push(lable[i].name)
+  lables.push(lable[i].name);
     data.push(lable[i].average)
   }
 
@@ -164,13 +164,11 @@
       alert("Start and end dates must be selected!");
       return
     }
-    var names = name.split("/")
-    console.log("My search: " +"  "+ names[0] + "ID: "+names[1] +"  "+ start + end +"  "+ type)
+    var names = name.split("/");
+    console.log("My search: " +"  "+ names[0] + "ID: "+names[1] +"  "+ start + end +"  "+ type);
 
     window.location.href = '/statistics/home/'+type.toLowerCase()+'?id='+names[1]+"&start="+start+"&end="+end;
   }
 
 
 </script>
-</body>
-</html>

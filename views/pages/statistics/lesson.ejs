@@ -86,13 +86,13 @@
 
   var lable = <%- JSON.stringify(data) %>
     console.log(lable[0].name);
-  var lables = []
-  var data = []
-  var dates = []
+  var lables = [];
+  var data = [];
+  var dates = [];
   for(let i = 0; i < lable.length; i++) {
-    lables.push(lable[i].id)
+    lables.push(lable[i].id);
 
-    data.push(Math.round(lable[i].average * 100) / 100)
+    data.push(Math.round(lable[i].average * 100) / 100);
     var parts =lable[i].date.split('T');
 
 
@@ -170,13 +170,11 @@
       alert("Start and end dates must be selected!");
       return
     }
-    var names = name.split("/")
-    console.log("My search: " +"  "+ names[0] + "ID: "+names[1] +"  "+ start + end +"  "+ type)
+    var names = name.split("/");
+    console.log("My search: " +"  "+ names[0] + "ID: "+names[1] +"  "+ start + end +"  "+ type);
 
     window.location.href = '/statistics/home/'+type.toLowerCase()+'?id='+names[1]+"&start="+start+"&end="+end;
   }
 
 
 </script>
-</body>
-</html>
