@@ -48,13 +48,16 @@ module.exports = {
     let end = new Date();
     end.setDate(end.getDate()+7);
     var lesson = [];
+
+
     for (let value of subject) {
      var values =  await Lesson.find({}).populate('subject').where({'date': {'>=': start, '<': end},subject: value.id}).sort(
        'date ASC');
      for(let x of values) {
+       var split_date = x.date.toString().split('G');
        var obj = {
          'name': x.subject.subjectName,
-         'date': x.date,
+         'date': split_date[0],
          'id': x.id,
        };
        lesson.push(obj);

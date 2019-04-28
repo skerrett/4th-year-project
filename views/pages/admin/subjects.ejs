@@ -27,7 +27,7 @@
                 <td class="cell100 column2"><%= subject[i].lecturer %></td>
                 <td class="cell100 column3"><%= subject[i].id %></td>
                 <td class="cell100 column4"><a href="/admin/lesson?id=<%= subject[i].id %>" class="button4" style="background-color:#4158d0">View lessons</a></td>
-                <td class="cell100 column5"><a href="/admin/users/edit?id=<%= subject[i].id %>" class="button4" style="background-color:#1a8cff">Edit</a></td>
+                <td class="cell100 column5"><a href="/admin/subject/edit?id=<%= subject[i].id %>" class="button4" style="background-color:#1a8cff">Edit</a></td>
                 <td class="cell100 column6"><button  class="button4" style="background-color:#ff1a1a" onclick="update(this)">Delete</button></td>
               </tr>
             <% } %>

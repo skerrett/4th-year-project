@@ -1,10 +1,19 @@
 module.exports = async function lesson (req, res) {
 
-  var subjectId = req.param('id');
+  let end;
+  let start;
+  let subjectId = req.param('id');
 
-  const start = new Date();
-  let end = new Date();
-  end.setDate(end.getDate()+14);
+  if(req.param('start') !== undefined || req.param('end') !== undefined) {
+    sails.log("1");
+    start = new Date(req.param('start'));
+    end = new Date(req.param('end'));
+  } else {
+    start = new Date();
+    end = new Date();
+    start.setDate(start.getDate() - 28);
+    sails.log("2");
+  }
 
   var stud = await Lesson.find({}).where({'date': {'>=': start, '<': end},subject: subjectId}).sort(
     'date ASC');
@@ -34,7 +43,7 @@ module.exports = async function lesson (req, res) {
   // named "name" to the value of the user's name.
 
 
-  return res.view('pages/admin/lessons', {lesson: lessons});
+  return res.view('pages/admin/lesson', {lesson: lessons});
 
 
 

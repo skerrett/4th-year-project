@@ -22,8 +22,7 @@
               <th class="cell100 column3">Surname</th>
               <th class="cell100 column4">Status</th>
               <th class="cell100 column5">Change Status</th>
-              <th class="cell100 column5">Edit</th>
-              <th class="cell100 column6">Delete</th>
+              <th class="cell100 column5">Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -40,8 +39,7 @@
                 <td class="cell100 column5"><button class="button4" style="background-color:green" onclick="update2(this)">Change</button></td>
 
               <% } %>
-              <td class="cell100 column5"><a href="/admin/lessons/edit?id=<%= attendance[i].id %>" class="button4" style="background-color:#1a8cff">Edit</a></td>
-              <td class="cell100 column6"><button  class="button4" style="background-color:#ff1a1a" onclick="update(this)">Delete</button></td>
+              <td class="cell100 column5"><button  class="button4" style="background-color:#ff1a1a" onclick="update(this)">Delete</button></td>
               <% } %>
             </tr>
             </tbody>
@@ -137,6 +135,37 @@
           tr[i].style.display = "none";
         }
       }
+    }
+  }
+
+  function update(x) {
+    var $row = $(x).closest("tr"),        // Finds the closest row <tr>
+      $tds = $row.find("td:nth-child(1)"); // Finds the 1st <td> element
+
+    console.log(($tds).text());
+    var id_value = ($tds).text();
+    var csrf = window.SAILS_LOCALS._csrf;
+
+    if (window.confirm("Do you really want to Delete this Subject")) {
+
+      $.ajax({
+        url: '/attendance/' + id_value, //Your api url
+        headers: {
+          'X-CSRF-TOKEN': csrf,
+        },
+        type: 'Delete',   //type is any HTTP method
+        data: {},
+        _csrf: csrf,
+        //Data as js object
+        success: function () {
+          window.location.reload(true);
+        },
+        error: function () {
+          console.log(window.SAILS_LOCALS._csrf);
+
+        }
+      })
+      ;
     }
   }
 

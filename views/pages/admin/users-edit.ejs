@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<link rel="stylesheet" href="/dependencies/font-awesome-4/css/font-awesome.css">
+
+<div id="subject-create">
+  <div class="container-contact100">
+    <div class="wrap-contact100">
+      <form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Edit User <%= users[0].id %>
+				</span>
+
+        <div class="wrap-input100 validate-input" data-validate="Please enter your User name">
+          <input class="input100" type="text" name="fullName" id="fullName" value="<%= users[0].fullName %>">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate = "Please enter your Email Address">
+          <input class="input100" type="text" name="emailAddress" id ="emailAddress" value="<%= users[0].emailAddress %>" >
+          <span class="focus-input100"></span>
+        </div>
+      </form>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" value="Submit" id="submit" onclick="SendAjax();">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Submit
+						</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- main-panel ends -->
+<%- exposeLocalsToBrowser() %>
+<script>
+  // When click on button store values from form fields into variables
+  function SendAjax() {
+    let fullName = $("#fullName").val();
+    let emailAddress = $("#emailAddress").val();
+    var id = <%- users[0].id %>
+    console.log(id)
+    const csrf = window.SAILS_LOCALS._csrf;
+    // Check if fields are empty
+
+    // AJAX code to submit form
+    $.ajax ({
+      type: "PATCH",
+      url: "/user/"+id,
+      headers: {
+        'X-CSRF-TOKEN': csrf,
+      },
+      data: { "fullName": fullName, "emailAddress": emailAddress},
+      success: function(data) {
+        console.log(data.id);
+        alert("Data Returned" + data.id);
+        window.location=('/admin/users');
+      },
+      error: function(){
+        alert("Invalid entry try again");
+      }
+    });}
+</script>
