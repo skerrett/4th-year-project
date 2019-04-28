@@ -1,11 +1,13 @@
 module.exports = async function lesson (req, res) {
 
+  //Set up variables
   var subjectId = req.param('id');
 
   const start = new Date();
   let end = new Date();
   end.setDate(end.getDate()+14);
 
+  //Find lessons with the params
   var stud = await Lesson.find({}).where({'date': {'>=': start, '<': end},subject: subjectId}).sort(
     'date ASC');
 
@@ -13,6 +15,7 @@ module.exports = async function lesson (req, res) {
   var lessons = [];
   for(let x of stud) {
 
+    //makes JSON object
     var split_date = x.date.toString().split('G');
     var obj = {
       'subject': x.subject,

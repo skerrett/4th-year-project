@@ -41,13 +41,13 @@ describe('Helper (helper)', function() {
   });
 
   describe('#getLessonsTotals()', function() {
-    it('should return  17.948717948717945%', function (done) {
+    it('should return  28.2051282051282%', function (done) {
       sails.helpers.getLessonsTotals(31)
         .then(function(getLessonTotals) {
 
-          if (getLessonTotals.Average !==  17.948717948717945 ) {
+          if (getLessonTotals.Average !==  28.2051282051282 ) {
             return done(new Error(
-              'Should return exactly  17.948717948717945 percent '+
+              'Should return exactly  28.2051282051282 percent '+
               'But instead, got: '+util.inspect(getLessonTotals, {depth:null})+''
             ));
           }//-•

@@ -1,5 +1,6 @@
 module.exports = async function attendance (req, res) {
 
+  //find params passed by
   let lessonId = req.param('id');
 
   const attendance = await Attendance.find({lessons: lessonId}).populate('students');

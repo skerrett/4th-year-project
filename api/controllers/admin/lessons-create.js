@@ -1,5 +1,6 @@
 module.exports = async function create (req, res) {
 
+  //get Variable from the URL
  var option = req.param('option');
  date = req.param('date');
 
@@ -9,7 +10,8 @@ module.exports = async function create (req, res) {
 
 
 
-
+//Go through both options
+  // both end in successful
  if(option === 'option1'){
    for (let i = 0; i < 13; i++){
   await Lesson.create({date:d, subject:req.param('subject')});

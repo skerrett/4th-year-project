@@ -1,5 +1,6 @@
 module.exports = async function create (req, res) {
 
+  //handle blanks else create
   if(req.param('subject') === ''){
     return res.notFound();
   }

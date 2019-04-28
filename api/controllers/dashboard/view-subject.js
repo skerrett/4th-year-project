@@ -21,10 +21,6 @@ module.exports = async function subject (req, res) {
 var sub = await Subject.find({lecturer: userId});
 
 
-//end of testing safe to remove
-
-  // If no user was found, redirect to signup.
-
   if (!user) {
     return res.redirect('/welcome');
 

@@ -11,9 +11,6 @@ module.exports = async function lesson (req, res) {
     return res.redirect('/welcome');
 
   }
-  // Display the welcome view, setting the view variable
-  // named "name" to the value of the user's name.
-
 
   return res.view('pages/admin/student-subject', {student: studentId});
 

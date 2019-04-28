@@ -19,6 +19,7 @@ module.exports = async function subject (req, res) {
   var averages =[];
   for(let i = 0; i < subjects.length; i++){
 
+    //Helper method to find our averages
     var temp = await sails.helpers.getLessonsTotals(subjects[i].id);
     var obj = {
       'name': subjects[i].subjectName,
@@ -27,23 +28,6 @@ module.exports = async function subject (req, res) {
     };
     averages.push(obj);
   }
-
-
-
-
-//end of testing safe to remove
-
-  // If no user was found, redirect to signup.
-/*
-  if (!user) {
-    return res.redirect('/welcome');
-
-  }
-  */
-  // Display the welcome view, setting the view variable
-  // named "name" to the value of the user's name.
-
-
   return res.view('pages/statistics/home', {data: averages});
 
 

@@ -23,11 +23,8 @@ module.exports.routes = {
 
 
   'GET /history':            { action:   'history/view-subject-history' },
-  'GET /history/lesson':            { action:   'history/view-lesson-history' },
+  'GET /history/lesson':     { action:   'history/view-lesson-history' },
 
-
-
-  'GET /faq':                { view:   'pages/faq' },
   'GET /legal/terms':        { view:   'pages/legal/terms' },
   'GET /legal/privacy':      { view:   'pages/legal/privacy' },
 

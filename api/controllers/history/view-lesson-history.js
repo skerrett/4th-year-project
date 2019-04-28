@@ -2,10 +2,12 @@ module.exports = async function lesson (req, res) {
 
 
 
+  //Set up variables
   let end;
   let start;
   let subjectId = req.param('id');
 
+  //Check if undefined
   if(req.param('start') !== undefined || req.param('end') !== undefined) {
     sails.log("1");
     start = new Date(req.param('start'));
@@ -25,6 +27,7 @@ module.exports = async function lesson (req, res) {
   var lessons = [];
   for(let x of stud) {
 
+    //Set up JSON objects
     var split_date = x.date.toString().split('G');
     var obj = {
       'subject': x.subject,
